@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOKTHOR • Producent Muzyki Elektronicznej</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-black: #0a0a0a;
+            --secondary-black: #1a1a1a;
+            --tertiary-black: #2a2a2a;
+            --neon-yellow: #ffff00;
+            --neon-yellow-dim: #d4af37;
+            --text-light: #ffffff;
+            --grid-color: rgba(255, 255, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: linear-gradient(135deg, var(--primary-black) 0%, var(--secondary-black) 100%);
+            color: var(--text-light);
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-attachment: fixed;
+        }
+
+        /* Animated grid background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(0deg, transparent 24%, var(--grid-color) 25%, var(--grid-color) 26%, transparent 27%, transparent 74%, var(--grid-color) 75%, var(--grid-color) 76%, transparent 77%, transparent),
+                linear-gradient(90deg, transparent 24%, var(--grid-color) 25%, var(--grid-color) 26%, transparent 27%, transparent 74%, var(--grid-color) 75%, var(--grid-color) 76%, transparent 77%, transparent);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: 1;
+            animation: gridShift 20s linear infinite;
+        }
+
+        @keyframes gridShift {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(50px);
+            }
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid var(--neon-yellow);
+            margin-bottom: 40px;
+            position: relative;
+            animation: pulse-border 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-border {
+            0%, 100% {
+                border-bottom-color: var(--neon-yellow);
+                box-shadow: 0 10px 30px rgba(255, 255, 0, 0.2);
+            }
+            50% {
+                border-bottom-color: var(--neon-yellow-dim);
+                box-shadow: 0 10px 30px rgba(255, 255, 0, 0.05);
+            }
+        }
+
+        .avatar {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 30px;
+            border-radius: 50%;
+            border: 3px solid var(--neon-yellow);
+            background: linear-gradient(135deg, var(--secondary-black), var(--tertiary-black));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            box-shadow: 
+                0 0 20px rgba(255, 255, 0, 0.5),
+                inset 0 0 20px rgba(255, 255, 0, 0.1);
+            animation: avatar-glow 3s ease-in-out infinite;
+        }
+
+        @keyframes avatar-glow {
+            0%, 100% {
+                box-shadow: 
+                    0 0 20px rgba(255, 255, 0, 0.5),
+                    inset 0 0 20px rgba(255, 255, 0, 0.1);
+            }
+            50% {
+                box-shadow: 
+                    0 0 40px rgba(255, 255, 0, 0.8),
+                    inset 0 0 30px rgba(255, 255, 0, 0.2);
+            }
+        }
+
+        h1 {
+            font-size: 3em;
+            font-weight: bold;
+            letter-spacing: 3px;
+            color: var(--neon-yellow);
+            text-shadow: 0 0 20px rgba(255, 255, 0, 0.6);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: var(--neon-yellow-dim);
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+
+        .tagline {
+            font-size: 0.9em;
+            color: #888;
+            letter-spacing: 1px;
+        }
+
+        /* Social Links Section */
+        .social-section {
+            margin: 40px 0;
+        }
+
+        .section-title {
+            font-size: 1.3em;
+            color: var(--neon-yellow);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--tertiary-black);
+        }
+
+        .social-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .social-card {
+            background: var(--secondary-black);
+            border: 2px solid var(--neon-yellow);
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--text-light);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 120px;
+        }
+
+        .social-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 0, 0.1);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .social-card:hover::before {
+            left: 0;
+        }
+
+        .social-card:hover {
+            box-shadow: 
+                0 0 20px rgba(255, 255, 0, 0.6),
+                inset 0 0 20px rgba(255, 255, 0, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .social-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .social-name {
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        /* Upcomming Events Section */
+        .events-section {
+            margin: 40px 0;
+        }
+
+        .event-card {
+            background: var(--secondary-black);
+            border-left: 4px solid var(--neon-yellow);
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .event-card:hover {
+            background: var(--tertiary-black);
+            box-shadow: 0 0 20px rgba(255, 255, 0, 0.3);
+        }
+
+        .event-date {
+            color: var(--neon-yellow);
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .event-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .event-location {
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        .empty-events {
+            text-align: center;
+            color: #666;
+            padding: 40px 20px;
+            border: 1px dashed var(--neon-yellow);
+            background: rgba(255, 255, 0, 0.05);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid var(--tertiary-black);
+            color: #666;
+            font-size: 0.85em;
+            letter-spacing: 1px;
+        }
+
+        .footer-text {
+            margin-bottom: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .social-links {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .avatar {
+                width: 150px;
+                height: 150px;
+                font-size: 60px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5em;
+            }
+
+            .subtitle {
+                font-size: 1em;
+            }
+
+            .social-links {
+                grid-template-columns: 1fr;
+            }
+
+            .avatar {
+                width: 120px;
+                height: 120px;
+                font-size: 50px;
+            }
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .social-card {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .social-card:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .social-card:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        .social-card:nth-child(4) {
+            animation-delay: 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="avatar">🎛️</div>
+            <h1>DOKTHOR</h1>
+            <p class="subtitle">Producent Muzyki Elektronicznej</p>
+            <p class="tagline">// INDUSTRIAL TECHNO & DARK ELECTRONIC</p>
+        </header>
+
+        <!-- Social Links -->
+        <section class="social-section">
+            <h2 class="section-title">→ Obserwuj</h2>
+            <div class="social-links">
+                <a href="https://www.instagram.com/dokthor303/" target="_blank" rel="noopener noreferrer" class="social-card">
+                    <span class="social-icon">📸</span>
+                    <span class="social-name">Instagram</span>
+                </a>
+                <a href="https://www.facebook.com/michal.horodyski.dokthor" target="_blank" rel="noopener noreferrer" class="social-card">
+                    <span class="social-icon">👤</span>
+                    <span class="social-name">Facebook</span>
+                </a>
+                <a href="https://www.tiktok.com/@dokthor303" target="_blank" rel="noopener noreferrer" class="social-card">
+                    <span class="social-icon">🎬</span>
+                    <span class="social-name">TikTok</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Streaming Platforms -->
+        <section class="social-section">
+            <h2 class="section-title">→ Słuchaj Muzyki</h2>
+            <div class="social-links">
+                <a href="#" class="social-card" style="opacity: 0.6; cursor: not-allowed;">
+                    <span class="social-icon">☁️</span>
+                    <span class="social-name">SoundCloud</span>
+                </a>
+                <a href="#" class="social-card" style="opacity: 0.6; cursor: not-allowed;">
+                    <span class="social-icon">🎵</span>
+                    <span class="social-name">Spotify</span>
+                </a>
+                <a href="#" class="social-card" style="opacity: 0.6; cursor: not-allowed;">
+                    <span class="social-icon">🎧</span>
+                    <span class="social-name">YouTube</span>
+                </a>
+                <a href="#" class="social-card" style="opacity: 0.6; cursor: not-allowed;">
+                    <span class="social-icon">🎼</span>
+                    <span class="social-name">Bandcamp</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Upcoming Events -->
+        <section class="events-section">
+            <h2 class="section-title">→ Nadchodzące Gigi</h2>
+            <div class="empty-events">
+                <p>📅 Brak zaplanowanych eventów</p>
+                <p style="font-size: 0.85em; margin-top: 10px; color: #555;">Śledź social media aby być na bieżąco</p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p class="footer-text">DOKTHOR © 2024</p>
+            <p class="footer-text">// INDUSTRIAL TECHNO LABORATORY</p>
+        </footer>
+    </div>
+</body>
+</html>

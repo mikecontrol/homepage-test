@@ -16,10 +16,11 @@
             --primary-black: #0a0a0a;
             --secondary-black: #1a1a1a;
             --tertiary-black: #2a2a2a;
-            --neon-yellow: #ffff00;
-            --neon-yellow-dim: #d4af37;
+            --gray-light: #e0e0e0;
+            --gray-medium: #b0b0b0;
+            --gray-dark: #707070;
             --text-light: #ffffff;
-            --grid-color: rgba(255, 255, 0, 0.1);
+            --grid-color: rgba(224, 224, 224, 0.08);
         }
 
         body {
@@ -82,16 +83,16 @@
             height: 220px;
             margin: 0 auto 30px;
             border-radius: 50%;
-            border: 4px solid var(--neon-yellow);
+            border: 3px solid var(--gray-light);
             background: linear-gradient(135deg, var(--secondary-black), var(--tertiary-black));
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 80px;
             box-shadow: 
-                0 0 30px rgba(255, 255, 0, 0.6),
-                0 0 60px rgba(255, 255, 0, 0.4),
-                inset 0 0 30px rgba(255, 255, 0, 0.15);
+                0 0 30px rgba(224, 224, 224, 0.2),
+                0 0 60px rgba(224, 224, 224, 0.1),
+                inset 0 0 30px rgba(224, 224, 224, 0.05);
             animation: avatar-glow 3s ease-in-out infinite;
             overflow: hidden;
             background-size: cover;
@@ -108,15 +109,15 @@
         @keyframes avatar-glow {
             0%, 100% {
                 box-shadow: 
-                    0 0 30px rgba(255, 255, 0, 0.6),
-                    0 0 60px rgba(255, 255, 0, 0.4),
-                    inset 0 0 30px rgba(255, 255, 0, 0.15);
+                    0 0 30px rgba(224, 224, 224, 0.2),
+                    0 0 60px rgba(224, 224, 224, 0.1),
+                    inset 0 0 30px rgba(224, 224, 224, 0.05);
             }
             50% {
                 box-shadow: 
-                    0 0 60px rgba(255, 255, 0, 1),
-                    0 0 120px rgba(255, 255, 0, 0.7),
-                    inset 0 0 40px rgba(255, 255, 0, 0.25);
+                    0 0 50px rgba(224, 224, 224, 0.4),
+                    0 0 100px rgba(224, 224, 224, 0.2),
+                    inset 0 0 40px rgba(224, 224, 224, 0.1);
             }
         }
 
@@ -124,54 +125,34 @@
             font-size: 3em;
             font-weight: bold;
             letter-spacing: 3px;
-            color: var(--neon-yellow);
-            text-shadow: 0 0 20px rgba(255, 255, 0, 0.6);
+            color: var(--gray-light);
+            text-shadow: 0 0 20px rgba(224, 224, 224, 0.2);
             margin-bottom: 10px;
             text-transform: uppercase;
-            animation: title-pulse-chaotic 4.3s ease-in-out infinite;
+            animation: title-subtle 3s ease-in-out infinite;
         }
 
-        @keyframes title-pulse-chaotic {
-            0% {
-                text-shadow: 0 0 30px rgba(255, 255, 0, 0.4), 0 0 60px rgba(255, 255, 0, 0.2);
+        @keyframes title-subtle {
+            0%, 100% {
+                text-shadow: 0 0 20px rgba(224, 224, 224, 0.2);
                 letter-spacing: 3px;
-            }
-            15% {
-                text-shadow: 0 0 80px rgba(255, 255, 0, 1), 0 0 150px rgba(255, 255, 0, 0.8);
-                letter-spacing: 6px;
-            }
-            35% {
-                text-shadow: 0 0 40px rgba(255, 255, 0, 0.5), 0 0 80px rgba(255, 255, 0, 0.3);
-                letter-spacing: 4px;
             }
             50% {
-                text-shadow: 0 0 120px rgba(255, 255, 0, 1.2), 0 0 200px rgba(255, 255, 0, 0.9);
-                letter-spacing: 8px;
-            }
-            70% {
-                text-shadow: 0 0 50px rgba(255, 255, 0, 0.6), 0 0 100px rgba(255, 255, 0, 0.4);
-                letter-spacing: 5px;
-            }
-            85% {
-                text-shadow: 0 0 90px rgba(255, 255, 0, 1), 0 0 170px rgba(255, 255, 0, 0.7);
-                letter-spacing: 7px;
-            }
-            100% {
-                text-shadow: 0 0 30px rgba(255, 255, 0, 0.4), 0 0 60px rgba(255, 255, 0, 0.2);
-                letter-spacing: 3px;
+                text-shadow: 0 0 40px rgba(224, 224, 224, 0.4);
+                letter-spacing: 4px;
             }
         }
 
         .subtitle {
             font-size: 1.2em;
-            color: var(--neon-yellow-dim);
+            color: var(--gray-medium);
             letter-spacing: 2px;
             margin-bottom: 5px;
         }
 
         .tagline {
             font-size: 0.9em;
-            color: #888;
+            color: var(--gray-dark);
             letter-spacing: 1px;
         }
 
@@ -182,12 +163,12 @@
 
         .section-title {
             font-size: 1.3em;
-            color: var(--neon-yellow);
+            color: var(--gray-light);
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 20px;
             padding-bottom: 10px;
-            border-bottom: 1px solid var(--tertiary-black);
+            border-bottom: 1px solid var(--gray-dark);
         }
 
         .social-links {
@@ -198,9 +179,9 @@
         }
 
         .social-card {
-            background: var(--secondary-black);
-            border: 2px solid var(--neon-yellow);
-            padding: 20px;
+            background: rgba(42, 42, 42, 0.5);
+            border: 1px solid var(--gray-dark);
+            padding: 25px;
             text-align: center;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -212,7 +193,8 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 120px;
+            min-height: 140px;
+            backdrop-filter: blur(10px);
         }
 
         .social-card::before {
@@ -222,7 +204,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 0, 0.1);
+            background: rgba(224, 224, 224, 0.05);
             transition: left 0.3s ease;
             z-index: -1;
         }
@@ -232,15 +214,23 @@
         }
 
         .social-card:hover {
-            box-shadow: 
-                0 0 20px rgba(255, 255, 0, 0.6),
-                inset 0 0 20px rgba(255, 255, 0, 0.1);
+            background: rgba(42, 42, 42, 0.8);
+            border-color: var(--gray-light);
+            box-shadow: 0 0 20px rgba(224, 224, 224, 0.15);
             transform: translateY(-5px);
         }
 
         .social-icon {
-            font-size: 2em;
-            margin-bottom: 10px;
+            font-size: 3.5em;
+            margin-bottom: 12px;
+            filter: grayscale(100%);
+            opacity: 0.9;
+            transition: all 0.3s ease;
+        }
+
+        .social-card:hover .social-icon {
+            opacity: 1;
+            transform: scale(1.1);
         }
 
         .social-name {
@@ -248,25 +238,27 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             font-weight: bold;
+            color: var(--gray-light);
         }
 
         /* Playlist Section */
         .playlist-section {
             margin: 40px 0;
-            background: var(--secondary-black);
-            border: 2px solid var(--neon-yellow);
+            background: rgba(42, 42, 42, 0.5);
+            border: 1px solid var(--gray-dark);
             padding: 30px;
-            box-shadow: 0 0 20px rgba(255, 255, 0, 0.3);
+            box-shadow: 0 0 20px rgba(224, 224, 224, 0.08);
+            backdrop-filter: blur(10px);
         }
 
         .playlist-section h2 {
             font-size: 1.3em;
-            color: var(--neon-yellow);
+            color: var(--gray-light);
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 25px;
             padding-bottom: 10px;
-            border-bottom: 1px solid var(--tertiary-black);
+            border-bottom: 1px solid var(--gray-dark);
         }
 
         .playlist-container {
@@ -286,20 +278,21 @@
         }
 
         .event-card {
-            background: var(--secondary-black);
-            border-left: 4px solid var(--neon-yellow);
+            background: rgba(42, 42, 42, 0.5);
+            border-left: 3px solid var(--gray-medium);
             padding: 20px;
             margin-bottom: 15px;
             transition: all 0.3s ease;
         }
 
         .event-card:hover {
-            background: var(--tertiary-black);
-            box-shadow: 0 0 20px rgba(255, 255, 0, 0.3);
+            background: rgba(42, 42, 42, 0.8);
+            box-shadow: 0 0 20px rgba(224, 224, 224, 0.1);
+            border-left-color: var(--gray-light);
         }
 
         .event-date {
-            color: var(--neon-yellow);
+            color: var(--gray-light);
             font-size: 0.9em;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -310,27 +303,28 @@
             font-size: 1.1em;
             font-weight: bold;
             margin-bottom: 5px;
+            color: var(--text-light);
         }
 
         .event-location {
-            color: #999;
+            color: var(--gray-medium);
             font-size: 0.9em;
         }
 
         .empty-events {
             text-align: center;
-            color: #666;
+            color: var(--gray-dark);
             padding: 40px 20px;
-            border: 1px dashed var(--neon-yellow);
-            background: rgba(255, 255, 0, 0.05);
+            border: 1px dashed var(--gray-dark);
+            background: rgba(224, 224, 224, 0.02);
         }
 
         /* Footer */
         footer {
             text-align: center;
             padding: 20px 0;
-            border-top: 1px solid var(--tertiary-black);
-            color: #666;
+            border-top: 1px solid var(--gray-dark);
+            color: var(--gray-dark);
             font-size: 0.85em;
             letter-spacing: 1px;
         }
@@ -357,6 +351,10 @@
                 width: 170px;
                 height: 170px;
                 font-size: 60px;
+            }
+
+            .social-icon {
+                font-size: 3em;
             }
 
             .playlist-section {
@@ -387,9 +385,13 @@
                 font-size: 50px;
             }
 
+            .social-icon {
+                font-size: 2.5em;
+            }
+
             .playlist-section {
                 padding: 15px;
-                border: 1px solid var(--neon-yellow);
+                border: 1px solid var(--gray-dark);
             }
 
             .playlist-container iframe {
@@ -482,7 +484,7 @@
         <section class="playlist-section">
             <h2>→ OfficiaL ReleaseS</h2>
             <div class="playlist-container">
-                <iframe width="100%" height="350" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2272387163&color=%23ffff00&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+                <iframe width="100%" height="350" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2272387163&color=%23b0b0b0&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
             </div>
         </section>
 
@@ -491,7 +493,7 @@
             <h2 class="section-title">→ Nadchodzące Gigi</h2>
             <div class="empty-events">
                 <p>📅 Brak zaplanowanych eventów</p>
-                <p style="font-size: 0.85em; margin-top: 10px; color: #555;">Śledź social media aby być na bieżąco</p>
+                <p style="font-size: 0.85em; margin-top: 10px; color: #707070;">Śledź social media aby być na bieżąco</p>
             </div>
         </section>
 

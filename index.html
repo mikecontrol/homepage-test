@@ -20,7 +20,6 @@
             --gray-medium: #b0b0b0;
             --gray-dark: #707070;
             --text-light: #ffffff;
-            --grid-color: rgba(224, 224, 224, 0.08);
         }
 
         body {
@@ -30,32 +29,6 @@
             min-height: 100vh;
             overflow-x: hidden;
             background-attachment: fixed;
-        }
-
-        /* Animated grid background */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(0deg, transparent 24%, var(--grid-color) 25%, var(--grid-color) 26%, transparent 27%, transparent 74%, var(--grid-color) 75%, var(--grid-color) 76%, transparent 77%, transparent),
-                linear-gradient(90deg, transparent 24%, var(--grid-color) 25%, var(--grid-color) 26%, transparent 27%, transparent 74%, var(--grid-color) 75%, var(--grid-color) 76%, transparent 77%, transparent);
-            background-size: 50px 50px;
-            pointer-events: none;
-            z-index: 1;
-            animation: gridShift 20s linear infinite;
-        }
-
-        @keyframes gridShift {
-            0% {
-                transform: translateY(0);
-            }
-            100% {
-                transform: translateY(50px);
-            }
         }
 
         .container {
@@ -179,8 +152,8 @@
         }
 
         .social-card {
-            background: rgba(42, 42, 42, 0.5);
-            border: 1px solid var(--gray-dark);
+            background: transparent;
+            border: none;
             padding: 25px;
             text-align: center;
             cursor: pointer;
@@ -194,29 +167,9 @@
             align-items: center;
             justify-content: center;
             min-height: 140px;
-            backdrop-filter: blur(10px);
-        }
-
-        .social-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: rgba(224, 224, 224, 0.05);
-            transition: left 0.3s ease;
-            z-index: -1;
-        }
-
-        .social-card:hover::before {
-            left: 0;
         }
 
         .social-card:hover {
-            background: rgba(42, 42, 42, 0.8);
-            border-color: var(--gray-light);
-            box-shadow: 0 0 20px rgba(224, 224, 224, 0.15);
             transform: translateY(-5px);
         }
 
@@ -251,11 +204,11 @@
         /* Playlist Section */
         .playlist-section {
             margin: 40px 0;
-            background: rgba(42, 42, 42, 0.5);
-            border: 1px solid var(--gray-dark);
-            padding: 30px;
-            box-shadow: 0 0 20px rgba(224, 224, 224, 0.08);
-            backdrop-filter: blur(10px);
+            background: transparent;
+            border: none;
+            padding: 30px 0;
+            box-shadow: none;
+            backdrop-filter: none;
         }
 
         .playlist-section h2 {
@@ -285,7 +238,7 @@
         }
 
         .event-card {
-            background: rgba(42, 42, 42, 0.5);
+            background: transparent;
             border-left: 3px solid var(--gray-medium);
             padding: 20px;
             margin-bottom: 15px;
@@ -293,7 +246,7 @@
         }
 
         .event-card:hover {
-            background: rgba(42, 42, 42, 0.8);
+            background: rgba(42, 42, 42, 0.3);
             box-shadow: 0 0 20px rgba(224, 224, 224, 0.1);
             border-left-color: var(--gray-light);
         }
@@ -366,7 +319,7 @@
             }
 
             .playlist-section {
-                padding: 20px;
+                padding: 20px 0;
             }
 
             .playlist-container iframe {
@@ -399,8 +352,8 @@
             }
 
             .playlist-section {
-                padding: 15px;
-                border: 1px solid var(--gray-dark);
+                padding: 15px 0;
+                border: none;
             }
 
             .playlist-container iframe {

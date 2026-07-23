@@ -127,17 +127,37 @@
             text-shadow: 0 0 20px rgba(255, 255, 0, 0.6);
             margin-bottom: 10px;
             text-transform: uppercase;
-            animation: title-pulse 1.5s ease-in-out infinite;
+            animation: title-pulse-chaotic 4.3s ease-in-out infinite;
         }
 
-        @keyframes title-pulse {
-            0%, 100% {
-                text-shadow: 0 0 20px rgba(255, 255, 0, 0.6), 0 0 40px rgba(255, 255, 0, 0.3);
+        @keyframes title-pulse-chaotic {
+            0% {
+                text-shadow: 0 0 30px rgba(255, 255, 0, 0.4), 0 0 60px rgba(255, 255, 0, 0.2);
                 letter-spacing: 3px;
             }
+            15% {
+                text-shadow: 0 0 80px rgba(255, 255, 0, 1), 0 0 150px rgba(255, 255, 0, 0.8);
+                letter-spacing: 6px;
+            }
+            35% {
+                text-shadow: 0 0 40px rgba(255, 255, 0, 0.5), 0 0 80px rgba(255, 255, 0, 0.3);
+                letter-spacing: 4px;
+            }
             50% {
-                text-shadow: 0 0 40px rgba(255, 255, 0, 1), 0 0 80px rgba(255, 255, 0, 0.6);
+                text-shadow: 0 0 120px rgba(255, 255, 0, 1.2), 0 0 200px rgba(255, 255, 0, 0.9);
+                letter-spacing: 8px;
+            }
+            70% {
+                text-shadow: 0 0 50px rgba(255, 255, 0, 0.6), 0 0 100px rgba(255, 255, 0, 0.4);
                 letter-spacing: 5px;
+            }
+            85% {
+                text-shadow: 0 0 90px rgba(255, 255, 0, 1), 0 0 170px rgba(255, 255, 0, 0.7);
+                letter-spacing: 7px;
+            }
+            100% {
+                text-shadow: 0 0 30px rgba(255, 255, 0, 0.4), 0 0 60px rgba(255, 255, 0, 0.2);
+                letter-spacing: 3px;
             }
         }
 
@@ -400,6 +420,10 @@
                 <a href="https://dokthor303.bandcamp.com/" target="_blank" rel="noopener noreferrer" class="social-card">
                     <span class="social-icon">🎼</span>
                     <span class="social-name">Bandcamp</span>
+                </a>
+                <a href="https://music.apple.com/us/artist/dokthor/1838413751" target="_blank" rel="noopener noreferrer" class="social-card">
+                    <span class="social-icon">🎵</span>
+                    <span class="social-name">Apple Music</span>
                 </a>
             </div>
         </section>

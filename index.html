@@ -263,6 +263,36 @@
             font-weight: bold;
         }
 
+        /* Playlist Section */
+        .playlist-section {
+            margin: 40px 0;
+            background: var(--secondary-black);
+            border: 2px solid var(--neon-yellow);
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(255, 255, 0, 0.3);
+        }
+
+        .playlist-section h2 {
+            font-size: 1.3em;
+            color: var(--neon-yellow);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--tertiary-black);
+        }
+
+        .playlist-container {
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .playlist-container iframe {
+            display: block;
+            width: 100%;
+            height: 350px;
+        }
+
         /* Upcomming Events Section */
         .events-section {
             margin: 40px 0;
@@ -341,6 +371,14 @@
                 height: 170px;
                 font-size: 60px;
             }
+
+            .playlist-section {
+                padding: 20px;
+            }
+
+            .playlist-container iframe {
+                height: 300px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -360,6 +398,15 @@
                 width: 140px;
                 height: 140px;
                 font-size: 50px;
+            }
+
+            .playlist-section {
+                padding: 15px;
+                border: 1px solid var(--neon-yellow);
+            }
+
+            .playlist-container iframe {
+                height: 250px;
             }
         }
 
@@ -441,6 +488,14 @@
                     <span class="social-icon">🎵</span>
                     <span class="social-name">Apple Music</span>
                 </a>
+            </div>
+        </section>
+
+        <!-- SoundCloud Playlist -->
+        <section class="playlist-section">
+            <h2>→ OfficiaL ReleaseS</h2>
+            <div class="playlist-container">
+                <iframe width="100%" height="350" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2272387163&color=%23ffff00&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
             </div>
         </section>
 

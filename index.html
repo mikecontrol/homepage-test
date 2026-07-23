@@ -70,7 +70,7 @@
             z-index: 2;
             max-width: 900px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 30px 20px;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -80,15 +80,15 @@
         /* Header */
         header {
             text-align: center;
-            padding: 40px 0;
-            margin-bottom: 40px;
+            padding: 30px 0 20px 0;
+            margin-bottom: 30px;
             position: relative;
         }
 
         .avatar {
-            width: 220px;
-            height: 220px;
-            margin: 0 auto 30px;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 20px;
             border-radius: 50%;
             border: 3px solid var(--gray-light);
             background: linear-gradient(135deg, var(--secondary-black), var(--tertiary-black));
@@ -129,12 +129,12 @@
         }
 
         h1 {
-            font-size: 3em;
+            font-size: 2.5em;
             font-weight: bold;
             letter-spacing: 3px;
             color: var(--gray-light);
             text-shadow: 0 0 20px rgba(224, 224, 224, 0.2);
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             text-transform: uppercase;
             animation: title-subtle 3s ease-in-out infinite;
         }
@@ -151,44 +151,44 @@
         }
 
         .subtitle {
-            font-size: 1.2em;
+            font-size: 1em;
             color: var(--gray-medium);
             letter-spacing: 2px;
-            margin-bottom: 5px;
+            margin-bottom: 3px;
         }
 
         .tagline {
-            font-size: 0.9em;
+            font-size: 0.8em;
             color: var(--gray-dark);
             letter-spacing: 1px;
         }
 
         /* Social Links Section */
         .social-section {
-            margin: 40px 0;
+            margin: 25px 0;
         }
 
         .section-title {
-            font-size: 1.3em;
+            font-size: 1.1em;
             color: var(--gray-light);
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
             border-bottom: none;
         }
 
         .social-links {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 10px;
+            margin-bottom: 25px;
         }
 
         .social-card {
             background: transparent;
             border: none;
-            padding: 25px;
+            padding: 15px;
             text-align: center;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -200,7 +200,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 140px;
+            min-height: 110px;
         }
 
         .social-card:hover {
@@ -208,9 +208,9 @@
         }
 
         .social-icon {
-            width: 60px;
-            height: 60px;
-            margin-bottom: 12px;
+            width: 50px;
+            height: 50px;
+            margin-bottom: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -228,54 +228,66 @@
         }
 
         .social-name {
-            font-size: 0.9em;
+            font-size: 0.75em;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             font-weight: bold;
             color: var(--gray-light);
         }
 
         /* Playlist Section */
         .playlist-section {
-            margin: 40px 0;
+            margin: 25px 0;
             background: transparent;
             border: none;
-            padding: 30px 0;
+            padding: 0;
             box-shadow: none;
             backdrop-filter: none;
         }
 
         .playlist-section h2 {
-            font-size: 1.3em;
+            font-size: 1.1em;
             color: var(--gray-light);
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 25px;
-            padding-bottom: 10px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
             border-bottom: none;
         }
 
         .playlist-container {
             overflow: hidden;
             border-radius: 8px;
+            margin-bottom: 20px;
         }
 
         .playlist-container iframe {
             display: block;
             width: 100%;
-            height: 350px;
+            height: 320px;
+        }
+
+        .tidal-container {
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .tidal-container iframe {
+            display: block;
+            width: 100%;
+            height: 275px;
         }
 
         /* Upcomming Events Section */
         .events-section {
-            margin: 40px 0;
+            margin: 25px 0;
         }
 
         .event-card {
             background: transparent;
             border-left: 3px solid var(--gray-medium);
-            padding: 20px;
-            margin-bottom: 15px;
+            padding: 15px;
+            margin-bottom: 12px;
             transition: all 0.3s ease;
         }
 
@@ -287,28 +299,28 @@
 
         .event-date {
             color: var(--gray-light);
-            font-size: 0.9em;
+            font-size: 0.85em;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 5px;
+            margin-bottom: 3px;
         }
 
         .event-title {
-            font-size: 1.1em;
+            font-size: 1em;
             font-weight: bold;
-            margin-bottom: 5px;
+            margin-bottom: 3px;
             color: var(--text-light);
         }
 
         .event-location {
             color: var(--gray-medium);
-            font-size: 0.9em;
+            font-size: 0.85em;
         }
 
         .empty-events {
             text-align: center;
             color: var(--gray-dark);
-            padding: 40px 20px;
+            padding: 30px 20px;
             border: 1px dashed var(--gray-dark);
             background: rgba(224, 224, 224, 0.02);
         }
@@ -316,15 +328,15 @@
         /* Footer */
         footer {
             text-align: center;
-            padding: 20px 0;
+            padding: 15px 0;
             border-top: none;
             color: var(--gray-dark);
-            font-size: 0.85em;
+            font-size: 0.8em;
             letter-spacing: 1px;
         }
 
         .footer-text {
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
 
         /* Responsive Design */
@@ -339,45 +351,13 @@
 
             .social-links {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
             }
 
             .avatar {
-                width: 170px;
-                height: 170px;
+                width: 160px;
+                height: 160px;
                 font-size: 60px;
-            }
-
-            .social-icon {
-                width: 50px;
-                height: 50px;
-            }
-
-            .playlist-section {
-                padding: 20px 0;
-            }
-
-            .playlist-container iframe {
-                height: 300px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.5em;
-            }
-
-            .subtitle {
-                font-size: 1em;
-            }
-
-            .social-links {
-                grid-template-columns: 1fr;
-            }
-
-            .avatar {
-                width: 140px;
-                height: 140px;
-                font-size: 50px;
             }
 
             .social-icon {
@@ -385,13 +365,57 @@
                 height: 45px;
             }
 
-            .playlist-section {
-                padding: 15px 0;
-                border: none;
+            .playlist-container iframe {
+                height: 300px;
+            }
+
+            .tidal-container iframe {
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.3em;
+            }
+
+            .subtitle {
+                font-size: 0.9em;
+            }
+
+            .social-links {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+            }
+
+            .avatar {
+                width: 130px;
+                height: 130px;
+                font-size: 50px;
+                margin-bottom: 15px;
+            }
+
+            .social-icon {
+                width: 40px;
+                height: 40px;
+                margin-bottom: 5px;
+            }
+
+            .social-card {
+                padding: 12px;
+                min-height: 100px;
+            }
+
+            .social-name {
+                font-size: 0.7em;
             }
 
             .playlist-container iframe {
-                height: 250px;
+                height: 280px;
+            }
+
+            .tidal-container iframe {
+                height: 200px;
             }
         }
 
@@ -423,6 +447,10 @@
 
         .social-card:nth-child(5) {
             animation-delay: 0.4s;
+        }
+
+        .social-card:nth-child(6) {
+            animation-delay: 0.5s;
         }
     </style>
 </head>
@@ -530,6 +558,11 @@
             <h2>→ OfficiaL ReleaseS</h2>
             <div class="playlist-container">
                 <iframe width="100%" height="350" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2272387163&color=%23b0b0b0&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true" title="SoundCloud Playlist"></iframe>
+            </div>
+
+            <!-- Tidal Playlist -->
+            <div class="tidal-container">
+                <iframe src="https://embed.tidal.com/playlists/0ba57b0f-9e19-4543-a547-9d9fc5bd4bdb" width="500" height="275" allow="encrypted-media; fullscreen; clipboard-write https://embed.tidal.com; web-share" sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox" style="color-scheme: light dark" title="TIDAL Embed Player"></iframe>
             </div>
         </section>
 
